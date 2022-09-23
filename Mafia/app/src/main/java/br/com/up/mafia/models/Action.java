@@ -6,12 +6,16 @@ public class Action {
     public String name;
     public String description;
     public ActionCategory category;
+    public ActionSubCategory subCategory;
+    public ActionDiscover actionDiscover;
 
-    public Action(int id, String name, String description, ActionCategory category){
+    public Action(int id, String name, String description, ActionCategory category, ActionSubCategory subCategory){
         this.id = id;
         this.name = name;
         this.description = description;
         this.category = category;
+        this.subCategory = subCategory;
+        this.actionDiscover = ActionDiscover.Unknown;
     }
 
     // Attributes
