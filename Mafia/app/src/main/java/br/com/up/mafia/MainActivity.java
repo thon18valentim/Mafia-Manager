@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.content.Intent;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,16 +25,22 @@ public class MainActivity extends AppCompatActivity {
         inputLayoutName = findViewById(R.id.editText_mafiaName);
         button = findViewById(R.id.button_start);
 
-        String mafia_name = inputLayoutName.getText().toString();
 
-        if(!mafia_name.isEmpty()){
-            button.setOnClickListener(
-                    view -> {
+        button.setOnClickListener(
+                view -> {
+                    String mafia_name = inputLayoutName.getText().toString();
+                    if(!mafia_name.isEmpty()){
                         Game game = Game.createGame(mafia_name);
-                    });
-        }
-        else{
-            inputLayoutName.setError("Favor inserir o nome!!");
-        }
+                        Intent intent = new Intent(
+                                getApplicationContext(),
+                                gameplay_main.class
+                        );
+                        startActivity(intent);
+                    }
+                    else{
+                        inputLayoutName.setError("Favor inserir o nome!!");
+                    }
+                });
+
     }
 }
