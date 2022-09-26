@@ -2,13 +2,9 @@ package br.com.up.mafia;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.content.Intent;
-
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import br.com.up.mafia.repositories.Game;
 
@@ -24,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         inputLayoutName = findViewById(R.id.editText_mafiaName);
         button = findViewById(R.id.button_start);
-
 
         button.setOnClickListener(
                 view -> {

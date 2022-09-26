@@ -15,12 +15,14 @@ public class Game {
             game = new Game();
             mafia = new Mafia(name);
             actions = game.createActions();
+            actionsChosen = new ArrayList<>();
         }
         return game;
     }
 
     private static Mafia mafia;
     private static ArrayList<Action> actions;
+    public static int actionCount = 0;
 
     private ArrayList<Action> createActions(){
         // Creating actions
@@ -106,4 +108,13 @@ public class Game {
         return actions;
     }
 
+    public static Mafia getMafia(){
+        return mafia;
+    }
+
+    public static ArrayList<Action> getActions(){
+        return actions;
+    }
+
+    public static ArrayList<Integer> actionsChosen;
 }

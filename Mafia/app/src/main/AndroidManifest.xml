@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mafia">
         <activity
+            android:name=".action_list"
+            android:exported="false" />
+        <activity
+            android:name=".status_gameplay"
+            android:exported="false" />
+        <activity
             android:name=".gameplay_main"
             android:exported="true" />
         <activity

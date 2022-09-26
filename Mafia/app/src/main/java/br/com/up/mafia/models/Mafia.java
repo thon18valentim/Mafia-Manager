@@ -14,12 +14,24 @@ public class Mafia {
 
     public Mafia(String name){
         this.name = name;
-        this.wantedLvl = 0;
-        this.fearLvl = 0;
-        this.respectLvl = 0;
-        this.cashLvl = 0;
-        this.gunsLvl = 0;
-        this.henchmanLvl = 0;
+        this.wantedLvl = 1;
+        this.fearLvl = 1;
+        this.respectLvl = 1;
+        this.cashLvl = 1;
+        this.gunsLvl = 1;
+        this.henchmanLvl = 1;
+    }
+
+    public int getCashLvl(){
+        return cashLvl;
+    }
+
+    public int getInfluenceLvl(){
+        return (fearLvl + respectLvl) / 2;
+    }
+
+    public int getForceLvl(){
+        return (gunsLvl + henchmanLvl) / 2;
     }
 
 }
