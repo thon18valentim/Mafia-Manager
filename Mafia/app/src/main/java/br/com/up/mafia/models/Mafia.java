@@ -34,4 +34,15 @@ public class Mafia {
         return (gunsLvl + henchmanLvl) / 2;
     }
 
+    public int getWantedLvl() { return wantedLvl; }
+
+    public void sumAction(int wanted, int fear, int respect, int cash, int guns, int henchman){
+        wantedLvl += wanted;
+        fearLvl += fear;
+        respectLvl += respect;
+        cashLvl += cash;
+        gunsLvl += guns;
+        henchmanLvl += henchman;
+    }
+
 }

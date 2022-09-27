@@ -16,6 +16,7 @@ public class Game {
             mafia = new Mafia(name);
             actions = game.createActions();
             actionsChosen = new ArrayList<>();
+            week = 1;
         }
         return game;
     }
@@ -23,6 +24,7 @@ public class Game {
     private static Mafia mafia;
     private static ArrayList<Action> actions;
     public static int actionCount = 0;
+    public static int week;
 
     private ArrayList<Action> createActions(){
         // Creating actions
@@ -117,4 +119,8 @@ public class Game {
     }
 
     public static ArrayList<Integer> actionsChosen;
+
+    public static Action getActionAtPosition(int position){
+        return actions.get(position);
+    }
 }

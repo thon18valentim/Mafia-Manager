@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actions_result">
+
+    <TextView
+        android:id="@+id/title_action_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="696dp"
+        android:text="RESULTADO DAS SUAS AÇÕES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/action_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="24dp"
+        android:text="Nome da ação"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_action_result" />
+
+    <TextView
+        android:id="@+id/titulo_procurado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="6dp"
+        android:text="Procurado"
+        app:layout_constraintBottom_toTopOf="@+id/procurado_valor"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_medo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_medo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="6dp"
+        android:text="Medo"
+        app:layout_constraintBottom_toTopOf="@+id/medo_valor"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_respeito"
+        app:layout_constraintStart_toEndOf="@+id/titulo_procurado"
+        app:layout_constraintTop_toBottomOf="@+id/title_action_result"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/titulo_respeito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:text="Respeito"
+        app:layout_constraintBottom_toTopOf="@+id/respeito_valor"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_dinheiro"
+        app:layout_constraintStart_toEndOf="@+id/titulo_medo"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_1" />
+
+    <TextView
+        android:id="@+id/titulo_dinheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="6dp"
+        android:text="Dinheiro"
+        app:layout_constraintBottom_toTopOf="@+id/dinheiro_valor"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_armamento"
+        app:layout_constraintStart_toEndOf="@+id/titulo_respeito"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_1" />
+
+    <TextView
+        android:id="@+id/titulo_armamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="6dp"
+        android:text="Armamento"
+        app:layout_constraintBottom_toTopOf="@+id/armamento_valor"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_capangas"
+        app:layout_constraintStart_toEndOf="@+id/titulo_dinheiro"
+        app:layout_constraintTop_toBottomOf="@+id/title_action_result" />
+
+    <TextView
+        android:id="@+id/titulo_capangas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="6dp"
+        android:text="Capangas"
+        app:layout_constraintBottom_toTopOf="@+id/capangas_valor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/titulo_armamento"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/procurado_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="48dp"
+        android:text="+0"
+        app:layout_constraintEnd_toStartOf="@+id/medo_valor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_procurado" />
+
+    <TextView
+        android:id="@+id/medo_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="+0"
+        app:layout_constraintStart_toEndOf="@+id/procurado_valor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_medo" />
+
+    <TextView
+        android:id="@+id/respeito_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="+0"
+        app:layout_constraintStart_toEndOf="@+id/medo_valor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_respeito" />
+
+    <TextView
+        android:id="@+id/dinheiro_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="+0"
+        app:layout_constraintStart_toEndOf="@+id/respeito_valor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_dinheiro" />
+
+    <TextView
+        android:id="@+id/armamento_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="+0"
+        app:layout_constraintStart_toEndOf="@+id/dinheiro_valor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_armamento" />
+
+    <TextView
+        android:id="@+id/capangas_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="+0"
+        app:layout_constraintStart_toEndOf="@+id/armamento_valor"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_capangas" />
+
+    <TextView
+        android:id="@+id/action_name_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="24dp"
+        android:text="Nome da ação"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_action_result" />
+
+    <TextView
+        android:id="@+id/titulo_procurado_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="12dp"
+        android:text="Procurado"
+        app:layout_constraintEnd_toStartOf="@+id/titulo_medo_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/procurado_valor" />
+
+    <TextView
+        android:id="@+id/titulo_medo_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="49dp"
+        android:text="Medo"
+        app:layout_constraintStart_toEndOf="@+id/titulo_procurado_2"
+        app:layout_constraintTop_toBottomOf="@+id/medo_valor" />
+
+    <TextView
+        android:id="@+id/titulo_respeito_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="8dp"
+        android:text="Respeito"
+        app:layout_constraintStart_toEndOf="@+id/titulo_medo_2"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_2" />
+
+    <TextView
+        android:id="@+id/titulo_dinheiro_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="8dp"
+        android:text="Dinheiro"
+        app:layout_constraintStart_toEndOf="@+id/titulo_respeito_2"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_2" />
+
+    <TextView
+        android:id="@+id/titulo_armamento_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="49dp"
+        android:text="Armamento"
+        app:layout_constraintStart_toEndOf="@+id/titulo_dinheiro_2"
+        app:layout_constraintTop_toBottomOf="@+id/armamento_valor" />
+
+    <TextView
+        android:id="@+id/titulo_capangas_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="1dp"
+        android:text="Capangas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/capangas_valor" />
+
+    <TextView
+        android:id="@+id/procurado_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_procurado_2" />
+
+    <TextView
+        android:id="@+id/medo_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="1dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_medo_2" />
+
+    <TextView
+        android:id="@+id/respeito_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="1dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_respeito_2" />
+
+    <TextView
+        android:id="@+id/dinheiro_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="1dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_dinheiro_2" />
+
+    <TextView
+        android:id="@+id/armamento_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="1dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_armamento_2" />
+
+    <TextView
+        android:id="@+id/capangas_valor_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="364dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_capangas_2" />
+
+    <TextView
+        android:id="@+id/action_name_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="24dp"
+        android:text="Nome da ação"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/respeito_valor_2" />
+
+    <TextView
+        android:id="@+id/titulo_procurado_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="61dp"
+        android:text="Procurado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/procurado_valor_2" />
+
+    <TextView
+        android:id="@+id/titulo_medo_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="60dp"
+        android:text="Medo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medo_valor_2" />
+
+    <TextView
+        android:id="@+id/titulo_respeito_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="12dp"
+        android:text="Respeito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_3" />
+
+    <TextView
+        android:id="@+id/titulo_dinheiro_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="12dp"
+        android:text="Dinheiro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_name_3" />
+
+    <TextView
+        android:id="@+id/titulo_armamento_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="60dp"
+        android:text="Armamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/armamento_valor_2" />
+
+    <TextView
+        android:id="@+id/titulo_capangas_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="344dp"
+        android:layout_marginTop="61dp"
+        android:text="Capangas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/capangas_valor_2" />
+
+    <TextView
+        android:id="@+id/procurado_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_procurado_3" />
+
+    <TextView
+        android:id="@+id/medo_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_medo_3" />
+
+    <TextView
+        android:id="@+id/respeito_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_respeito_3" />
+
+    <TextView
+        android:id="@+id/dinheiro_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="212dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_dinheiro_3" />
+
+    <TextView
+        android:id="@+id/armamento_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="284dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_armamento_3" />
+
+    <TextView
+        android:id="@+id/capangas_valor_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="364dp"
+        android:text="+0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_capangas_3" />
+
+    <Button
+        android:id="@+id/button_close_results"
+        android:layout_width="226dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="142dp"
+        android:text="CLOSE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

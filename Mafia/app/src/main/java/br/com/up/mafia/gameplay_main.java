@@ -18,8 +18,10 @@ public class gameplay_main extends AppCompatActivity {
     private ProgressBar cashProgressBar;
     private ProgressBar influenceProgressBar;
     private ProgressBar forceProgressBar;
+    private ProgressBar wantedProgressBar;
 
     private Button statusBtn;
+    private Button advWeekBtn;
     private Button actionsBtn;
 
     @Override
@@ -34,8 +36,10 @@ public class gameplay_main extends AppCompatActivity {
         cashProgressBar = findViewById(R.id.progress_bar_money);
         influenceProgressBar = findViewById(R.id.progress_bar_influency);
         forceProgressBar = findViewById(R.id.progress_bar_strength);
+        wantedProgressBar = findViewById(R.id.progress_bar_wanted);
 
         statusBtn = findViewById(R.id.button_status);
+        advWeekBtn = findViewById(R.id.button_time);
         actionsBtn = findViewById(R.id.button_actions);
 
         mafiaNameTextView.setText(mafia.name);
@@ -43,12 +47,22 @@ public class gameplay_main extends AppCompatActivity {
         cashProgressBar.setProgress(mafia.getCashLvl());
         influenceProgressBar.setProgress(mafia.getInfluenceLvl());
         forceProgressBar.setProgress(mafia.getForceLvl());
+        wantedProgressBar.setProgress(mafia.getWantedLvl());
 
         statusBtn.setOnClickListener(
                 view -> {
                     Intent intent = new Intent(
                             getApplicationContext(),
                             status_gameplay.class
+                    );
+                    startActivity(intent);
+                });
+
+        advWeekBtn.setOnClickListener(
+                view -> {
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            actions_result.class
                     );
                     startActivity(intent);
                 });

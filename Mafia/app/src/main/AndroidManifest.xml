@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mafia">
         <activity
+            android:name=".actions_result"
+            android:exported="false" />
+        <activity
             android:name=".action_list"
             android:exported="false" />
         <activity
