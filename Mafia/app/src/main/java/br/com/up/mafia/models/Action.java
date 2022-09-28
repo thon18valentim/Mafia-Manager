@@ -1,5 +1,7 @@
 package br.com.up.mafia.models;
 
+import java.util.Random;
+
 public class Action {
 
     public int id;
@@ -33,6 +35,38 @@ public class Action {
         this.cash = cash;
         this.guns = guns;
         this.henchman = henchman;
+    }
+
+    public boolean ExecuteAction(Mafia mafia)
+    {
+        double chances = 60 - (mafia.wantedLvl / 5);
+
+        if(this.category == ActionCategory.Cash)
+        {
+            //arma e medo
+            chances += (mafia.gunsLvl / 5) + (mafia.fearLvl / 5);
+
+        }
+        else if(this.category == ActionCategory.Influence)
+        {
+            //respeito e medo
+            chances += (mafia.respectLvl / 5) + (mafia.fearLvl / 5);
+
+        }
+        else if(this.category == ActionCategory.Strength)
+        {
+            //capanga e arma
+            chances += (mafia.henchmanLvl / 5) + (mafia.gunsLvl / 5);
+
+        }
+
+        if(chances >= new Random().nextInt(101))
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
 }

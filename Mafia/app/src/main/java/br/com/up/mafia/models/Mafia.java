@@ -45,4 +45,13 @@ public class Mafia {
         henchmanLvl += henchman;
     }
 
+    public void subAction(int wanted, int fear, int respect, int cash, int guns, int henchman){
+        wantedLvl += wanted * 2;
+        fearLvl -= Math.abs(fear);
+        respectLvl -= Math.abs(respect);
+        cashLvl -= Math.abs(cash);
+        gunsLvl -= Math.abs(guns);
+        henchmanLvl -= Math.abs(henchman);
+    }
+
 }

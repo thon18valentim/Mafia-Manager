@@ -41,8 +41,47 @@ public class actions_result extends AppCompatActivity {
         action_name_3.setText(actionsChosen.get(2).name);
 
         PopulateItemsText();
-        PopulateValuesText();
-        SumValues();
+
+        int contador = 0;
+        String sinal = "+";
+
+        for (int i = 0; i < 3; i++)
+        {
+            if(actionsChosen.get(i).ExecuteAction(Game.getMafia()))
+            {
+                Game.getMafia().sumAction(
+                        actionsChosen.get(i).wanted,
+                        actionsChosen.get(i).fear,
+                        actionsChosen.get(i).respect,
+                        actionsChosen.get(i).cash,
+                        actionsChosen.get(i).guns,
+                        actionsChosen.get(i).henchman);
+
+                sinal = "+";
+                textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted));
+            }
+            else
+            {
+                Game.getMafia().subAction(
+                        actionsChosen.get(i).wanted,
+                        actionsChosen.get(i).fear,
+                        actionsChosen.get(i).respect,
+                        actionsChosen.get(i).cash,
+                        actionsChosen.get(i).guns,
+                        actionsChosen.get(i).henchman);
+
+                sinal = "-";
+                textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted * 2));
+            }
+
+            textViews.get(contador+1).setText(sinal + Math.abs(actionsChosen.get(i).fear));
+            textViews.get(contador+2).setText(sinal + Math.abs(actionsChosen.get(i).respect));
+            textViews.get(contador+3).setText(sinal + Math.abs(actionsChosen.get(i).cash));
+            textViews.get(contador+4).setText(sinal + Math.abs(actionsChosen.get(i).guns));
+            textViews.get(contador+5).setText(sinal + Math.abs(actionsChosen.get(i).henchman));
+
+            contador += 6;
+        }
 
         close_button.setOnClickListener(
                 view -> {
@@ -84,53 +123,4 @@ public class actions_result extends AppCompatActivity {
         textViews.add(findViewById(R.id.capangas_valor_3));
     }
 
-    void PopulateValuesText(){
-        // Action 1
-        textViews.get(0).setText("+" + actionsChosen.get(0).wanted);
-        textViews.get(1).setText("+" + actionsChosen.get(0).fear);
-        textViews.get(2).setText("+" + actionsChosen.get(0).respect);
-        textViews.get(3).setText("+" + actionsChosen.get(0).cash);
-        textViews.get(4).setText("+" + actionsChosen.get(0).guns);
-        textViews.get(5).setText("+" + actionsChosen.get(0).henchman);
-
-        // Action 2
-        textViews.get(6).setText("+" + actionsChosen.get(1).wanted);
-        textViews.get(7).setText("+" + actionsChosen.get(1).fear);
-        textViews.get(8).setText("+" + actionsChosen.get(1).respect);
-        textViews.get(9).setText("+" + actionsChosen.get(1).cash);
-        textViews.get(10).setText("+" + actionsChosen.get(1).guns);
-        textViews.get(11).setText("+" + actionsChosen.get(1).henchman);
-
-        // Action 3
-        textViews.get(12).setText("+" + actionsChosen.get(2).wanted);
-        textViews.get(13).setText("+" + actionsChosen.get(2).fear);
-        textViews.get(14).setText("+" + actionsChosen.get(2).respect);
-        textViews.get(15).setText("+" + actionsChosen.get(2).cash);
-        textViews.get(16).setText("+" + actionsChosen.get(2).guns);
-        textViews.get(17).setText("+" + actionsChosen.get(2).henchman);
-    }
-
-    void SumValues(){
-        Game.getMafia().sumAction(
-                actionsChosen.get(0).wanted,
-                actionsChosen.get(0).fear,
-                actionsChosen.get(0).respect,
-                actionsChosen.get(0).cash,
-                actionsChosen.get(0).guns,
-                actionsChosen.get(0).henchman);
-        Game.getMafia().sumAction(
-                actionsChosen.get(1).wanted,
-                actionsChosen.get(1).fear,
-                actionsChosen.get(1).respect,
-                actionsChosen.get(1).cash,
-                actionsChosen.get(1).guns,
-                actionsChosen.get(1).henchman);
-        Game.getMafia().sumAction(
-                actionsChosen.get(2).wanted,
-                actionsChosen.get(2).fear,
-                actionsChosen.get(2).respect,
-                actionsChosen.get(2).cash,
-                actionsChosen.get(2).guns,
-                actionsChosen.get(2).henchman);
-    }
 }
