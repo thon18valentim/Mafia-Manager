@@ -15,12 +15,12 @@ public class Mafia {
 
     public Mafia(String name){
         this.name = name;
-        this.wantedLvl = 1;
-        this.fearLvl = 1;
-        this.respectLvl = 1;
-        this.cashLvl = 1;
-        this.gunsLvl = 1;
-        this.henchmanLvl = 1;
+        this.wantedLvl = 5;
+        this.fearLvl = 10;
+        this.respectLvl = 15;
+        this.cashLvl = 30;
+        this.gunsLvl = 10;
+        this.henchmanLvl = 10;
         this.status = Status.Alive;
     }
 
@@ -45,15 +45,44 @@ public class Mafia {
         cashLvl += cash;
         gunsLvl += guns;
         henchmanLvl += henchman;
-    }
 
-    public void subAction(int wanted, int fear, int respect, int cash, int guns, int henchman){
-        wantedLvl += wanted * 2;
-        fearLvl -= Math.abs(fear);
-        respectLvl -= Math.abs(respect);
-        cashLvl -= Math.abs(cash);
-        gunsLvl -= Math.abs(guns);
-        henchmanLvl -= Math.abs(henchman);
+        if (wantedLvl > 100){
+            wantedLvl = 100;
+        }
+        if (fearLvl > 100){
+            fearLvl = 100;
+        }
+        if (respectLvl > 100){
+            respectLvl = 100;
+        }
+        if (cashLvl > 100){
+            cashLvl = 100;
+        }
+        if (gunsLvl > 100){
+            gunsLvl = 100;
+        }
+        if (henchmanLvl > 100){
+            henchmanLvl = 100;
+        }
+
+        if (wantedLvl < 0){
+            wantedLvl = 1;
+        }
+        if (fearLvl < 0){
+            fearLvl = 1;
+        }
+        if (respectLvl < 0){
+            respectLvl = 1;
+        }
+        if (cashLvl < 0){
+            cashLvl = 1;
+        }
+        if (gunsLvl < 0){
+            gunsLvl = 1;
+        }
+        if (henchmanLvl < 0){
+            henchmanLvl = 1;
+        }
     }
 
 }

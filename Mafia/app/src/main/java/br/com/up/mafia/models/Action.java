@@ -28,6 +28,14 @@ public class Action {
     public int guns;
     public int henchman;
 
+    // Negative Attributes
+    public int wanted_negative;
+    public int fear_negative;
+    public int respect_negative;
+    public int cash_negative;
+    public int guns_negative;
+    public int henchman_negative;
+
     public void SetAttributes(int wanted, int fear, int respect, int cash, int guns, int henchman){
         this.wanted = wanted;
         this.fear = fear;
@@ -35,6 +43,15 @@ public class Action {
         this.cash = cash;
         this.guns = guns;
         this.henchman = henchman;
+    }
+
+    public void SetNegativeAttributes(int wanted, int fear, int respect, int cash, int guns, int henchman){
+        this.wanted_negative = wanted;
+        this.fear_negative = fear;
+        this.respect_negative = respect;
+        this.cash_negative = cash;
+        this.guns_negative = guns;
+        this.henchman_negative = henchman;
     }
 
     public boolean ExecuteAction(Mafia mafia)

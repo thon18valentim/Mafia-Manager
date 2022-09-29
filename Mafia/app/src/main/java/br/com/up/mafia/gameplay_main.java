@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -82,11 +83,16 @@ public class gameplay_main extends AppCompatActivity {
                 view -> {
                     buttonSound = MediaPlayer.create(gameplay_main.this,R.raw.cavalo);
                     buttonSound.start();
-                    Intent intent = new Intent(
-                            getApplicationContext(),
-                            actions_result.class
-                    );
-                    startActivity(intent);
+                    if (Game.actionCount == 3){
+                        Intent intent = new Intent(
+                                getApplicationContext(),
+                                actions_result.class
+                        );
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(this, "Ações não selecionadas", Toast.LENGTH_SHORT).show();
+                    }
                 });
 
         actionsBtn.setOnClickListener(

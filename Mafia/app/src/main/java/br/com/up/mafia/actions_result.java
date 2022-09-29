@@ -37,9 +37,9 @@ public class actions_result extends AppCompatActivity {
         close_button = findViewById(R.id.button_close_results);
 
         actionsChosen = new ArrayList<>();
-        actionsChosen.add(Game.getActionAtPosition(Game.actionsChosen.get(0)));
-        actionsChosen.add(Game.getActionAtPosition(Game.actionsChosen.get(1)));
-        actionsChosen.add(Game.getActionAtPosition(Game.actionsChosen.get(2)));
+        actionsChosen.add(Game.getActionsById(Game.actionsChosen.get(0)));
+        actionsChosen.add(Game.getActionsById(Game.actionsChosen.get(1)));
+        actionsChosen.add(Game.getActionsById(Game.actionsChosen.get(2)));
 
         action_name_1.setText(actionsChosen.get(0).name);
         action_name_2.setText(actionsChosen.get(1).name);
@@ -48,8 +48,6 @@ public class actions_result extends AppCompatActivity {
         PopulateItemsText();
 
         int contador = 0;
-        String sinal = "+";
-
         for (int i = 0; i < 3; i++)
         {
             if(actionsChosen.get(i).ExecuteAction(Game.getMafia()))
@@ -62,22 +60,30 @@ public class actions_result extends AppCompatActivity {
                         actionsChosen.get(i).guns,
                         actionsChosen.get(i).henchman);
 
-                sinal = "+";
-                textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted));
+                textViews.get(contador).setText("" + actionsChosen.get(i).wanted);
+                textViews.get(contador+1).setText("" + actionsChosen.get(i).fear);
+                textViews.get(contador+2).setText("" + actionsChosen.get(i).respect);
+                textViews.get(contador+3).setText("" + actionsChosen.get(i).cash);
+                textViews.get(contador+4).setText("" + actionsChosen.get(i).guns);
+                textViews.get(contador+5).setText("" + actionsChosen.get(i).henchman);
                 status = Status.Alive;
             }
             else
             {
-                Game.getMafia().subAction(
-                        actionsChosen.get(i).wanted,
-                        actionsChosen.get(i).fear,
-                        actionsChosen.get(i).respect,
-                        actionsChosen.get(i).cash,
-                        actionsChosen.get(i).guns,
-                        actionsChosen.get(i).henchman);
+                Game.getMafia().sumAction(
+                        actionsChosen.get(i).wanted_negative,
+                        actionsChosen.get(i).fear_negative,
+                        actionsChosen.get(i).respect_negative,
+                        actionsChosen.get(i).cash_negative,
+                        actionsChosen.get(i).guns_negative,
+                        actionsChosen.get(i).henchman_negative);
 
-                sinal = "-";
-                textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted * 2));
+                textViews.get(contador).setText("" + actionsChosen.get(i).wanted_negative);
+                textViews.get(contador+1).setText("" + actionsChosen.get(i).fear_negative);
+                textViews.get(contador+2).setText("" + actionsChosen.get(i).respect_negative);
+                textViews.get(contador+3).setText("" + actionsChosen.get(i).cash_negative);
+                textViews.get(contador+4).setText("" + actionsChosen.get(i).guns_negative);
+                textViews.get(contador+5).setText("" + actionsChosen.get(i).henchman_negative);
 
                 if (Game.getMafia().wantedLvl > 90){
                     int rnd = new Random().nextInt(400);
@@ -92,12 +98,6 @@ public class actions_result extends AppCompatActivity {
                     }
                 }
             }
-
-            textViews.get(contador+1).setText(sinal + Math.abs(actionsChosen.get(i).fear));
-            textViews.get(contador+2).setText(sinal + Math.abs(actionsChosen.get(i).respect));
-            textViews.get(contador+3).setText(sinal + Math.abs(actionsChosen.get(i).cash));
-            textViews.get(contador+4).setText(sinal + Math.abs(actionsChosen.get(i).guns));
-            textViews.get(contador+5).setText(sinal + Math.abs(actionsChosen.get(i).henchman));
 
             Game.history.add("Semana " + Game.week + " - " +  Game.getMafia().name + " cometeu a ação " + actionsChosen.get(i).name);
 
