@@ -1,11 +1,21 @@
 package br.com.up.mafia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
+import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import br.com.up.mafia.models.Mafia;
 import br.com.up.mafia.repositories.Game;
@@ -23,6 +33,8 @@ public class gameplay_main extends AppCompatActivity {
     private Button statusBtn;
     private Button advWeekBtn;
     private Button actionsBtn;
+
+    private RecyclerView historyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +60,10 @@ public class gameplay_main extends AppCompatActivity {
         influenceProgressBar.setProgress(mafia.getInfluenceLvl());
         forceProgressBar.setProgress(mafia.getForceLvl());
         wantedProgressBar.setProgress(mafia.getWantedLvl());
+
+        historyView = findViewById(R.id.recyclerView);
+        historyView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        historyView.setHasFixedSize(true);
 
         statusBtn.setOnClickListener(
                 view -> {
@@ -75,5 +91,12 @@ public class gameplay_main extends AppCompatActivity {
                     );
                     startActivity(intent);
                 });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+        historyView.setAdapter(new HistoryAdapter(Game.history));
     }
 }

@@ -3,6 +3,7 @@ package br.com.up.mafia.models;
 public class Mafia {
 
     public String name;
+    public Status status;
 
     // Attributes
     public int wantedLvl;
@@ -20,6 +21,7 @@ public class Mafia {
         this.cashLvl = 1;
         this.gunsLvl = 1;
         this.henchmanLvl = 1;
+        this.status = Status.Alive;
     }
 
     public int getCashLvl(){

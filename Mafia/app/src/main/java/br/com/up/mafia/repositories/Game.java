@@ -17,6 +17,11 @@ public class Game {
             actions = game.createActions();
             actionsChosen = new ArrayList<>();
             week = 1;
+            history = new ArrayList<String>(){
+                {
+                    add("Semana 0 - Mafia inaugurada");
+                }
+            };
         }
         return game;
     }
@@ -25,6 +30,7 @@ public class Game {
     private static ArrayList<Action> actions;
     public static int actionCount = 0;
     public static int week;
+    public static ArrayList<String> history;
 
     private ArrayList<Action> createActions(){
         // Creating actions

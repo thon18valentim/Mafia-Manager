@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.Random;
+
 import br.com.up.mafia.models.Action;
+import br.com.up.mafia.models.Status;
 import br.com.up.mafia.repositories.Game;
 
 public class actions_result extends AppCompatActivity {
@@ -19,6 +22,8 @@ public class actions_result extends AppCompatActivity {
     ArrayList<Action> actionsChosen;
 
     Button close_button;
+
+    private Status status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,7 @@ public class actions_result extends AppCompatActivity {
 
                 sinal = "+";
                 textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted));
+                status = Status.Alive;
             }
             else
             {
@@ -72,6 +78,19 @@ public class actions_result extends AppCompatActivity {
 
                 sinal = "-";
                 textViews.get(contador).setText("+" + Math.abs(actionsChosen.get(i).wanted * 2));
+
+                if (Game.getMafia().wantedLvl > 90){
+                    int rnd = new Random().nextInt(400);
+                    if (rnd > 395){
+                        status = Status.Prisoner;
+                    }
+                }
+                else if (Game.getMafia().wantedLvl > 70){
+                    int rnd = new Random().nextInt(300);
+                    if (rnd > 295){
+                        status = Status.Dead;
+                    }
+                }
             }
 
             textViews.get(contador+1).setText(sinal + Math.abs(actionsChosen.get(i).fear));
@@ -80,15 +99,26 @@ public class actions_result extends AppCompatActivity {
             textViews.get(contador+4).setText(sinal + Math.abs(actionsChosen.get(i).guns));
             textViews.get(contador+5).setText(sinal + Math.abs(actionsChosen.get(i).henchman));
 
+            Game.history.add("Semana " + Game.week + " - " +  Game.getMafia().name + " cometeu a ação " + actionsChosen.get(i).name);
+
             contador += 6;
         }
 
         close_button.setOnClickListener(
                 view -> {
-                    Intent intent = new Intent(
-                            getApplicationContext(),
-                            gameplay_main.class
-                    );
+                    Intent intent;
+                    if (Game.week > 30 || status != Status.Alive){
+                        intent = new Intent(
+                                getApplicationContext(),
+                                game_over.class
+                        );
+                    }
+                    else{
+                        intent = new Intent(
+                                getApplicationContext(),
+                                gameplay_main.class
+                        );
+                    }
                     Game.week++;
                     Game.actionsChosen = new ArrayList<>();
                     Game.actionCount = 0;
