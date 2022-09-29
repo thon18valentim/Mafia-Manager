@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9C9898"
     tools:context=".gameplay_main">
 
     <Button
@@ -13,6 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/black"
         android:text="+ Semana"
         app:layout_constraintEnd_toStartOf="@+id/button_actions"
         app:layout_constraintStart_toEndOf="@+id/button_status"
@@ -25,6 +27,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/black"
         android:text="Acoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_time"
@@ -37,6 +40,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/black"
         android:text="status"
         app:layout_constraintEnd_toStartOf="@+id/button_time"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +104,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:hint="User"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -113,6 +118,7 @@
         android:layout_marginEnd="8dp"
         android:hint="Dinheiro"
         android:text="Dinheiro"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/progress_bar_money"
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +132,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Forca"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/progress_bar_money"
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,12 +140,13 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="63dp"
-        android:layout_height="21dp"
+        android:layout_width="76dp"
+        android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Influencia"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/progress_bar_money"
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,6 +160,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:text="Procurado"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/progress_bar_money"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -174,6 +183,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Action Counter"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/text_view_mafiaName"
         app:layout_constraintTop_toTopOf="parent" />

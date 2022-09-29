@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9C9898"
     tools:context=".actions_result">
 
     <TextView
@@ -15,6 +16,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="696dp"
         android:text="RESULTADO DAS SUAS AÇÕES"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +31,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
         android:text="Nome da ação"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_action_result" />
@@ -176,6 +180,7 @@
         android:layout_marginTop="156dp"
         android:layout_marginEnd="24dp"
         android:text="Nome da ação"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_action_result" />
@@ -308,6 +313,7 @@
         android:layout_marginTop="29dp"
         android:layout_marginEnd="24dp"
         android:text="Nome da ação"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -434,7 +440,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="142dp"
-        android:text="CLOSE"
+        android:backgroundTint="@color/black"
+        android:text="FECHAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
