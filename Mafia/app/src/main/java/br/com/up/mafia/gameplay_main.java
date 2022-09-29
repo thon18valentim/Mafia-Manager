@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.DataSetObserver;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ public class gameplay_main extends AppCompatActivity {
     private Button statusBtn;
     private Button advWeekBtn;
     private Button actionsBtn;
+    private MediaPlayer buttonSound;
 
     private RecyclerView historyView;
 
@@ -67,6 +69,8 @@ public class gameplay_main extends AppCompatActivity {
 
         statusBtn.setOnClickListener(
                 view -> {
+                    buttonSound = MediaPlayer.create(gameplay_main.this,R.raw.cavalo);
+                    buttonSound.start();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             status_gameplay.class
@@ -76,6 +80,8 @@ public class gameplay_main extends AppCompatActivity {
 
         advWeekBtn.setOnClickListener(
                 view -> {
+                    buttonSound = MediaPlayer.create(gameplay_main.this,R.raw.cavalo);
+                    buttonSound.start();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             actions_result.class
@@ -85,6 +91,8 @@ public class gameplay_main extends AppCompatActivity {
 
         actionsBtn.setOnClickListener(
                 view -> {
+                    buttonSound = MediaPlayer.create(gameplay_main.this,R.raw.cavalo);
+                    buttonSound.start();
                     Intent intent = new Intent(
                             getApplicationContext(),
                             action_list.class
